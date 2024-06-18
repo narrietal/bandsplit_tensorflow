@@ -1,4 +1,7 @@
-import tensorflow as tf 
+import tensorflow as tf
+import sys
+import os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from bandsplit_tensorflow import BandSplitLayer
 
 # Test the implementation
@@ -18,4 +21,6 @@ def simple_test():
     
     assert output.shape == (batch_size, input_time_dim, 30, sub_band_feature_dim) #30 equals the total number of sub bands (define in paper)
     
-    print("Test passed. Output shape:", output.shape)
+    print("\n\n##########################\nTest passed. Output shape:", output.shape, "\n##########################")
+    
+simple_test()
