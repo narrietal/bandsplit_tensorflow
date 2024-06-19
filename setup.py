@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
     
 setup(
     name='bandsplit_tensorflow',
-    version='0.1.1',
+    version='0.1.2',
     description='A non-official implementation of the BandSplit technique as a TensorFlow layer.',
     long_description=long_description,
     long_description_content_type="text/markdown",
