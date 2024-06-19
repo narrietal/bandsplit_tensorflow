@@ -19,7 +19,7 @@ def simple_test():
     
     output = band_split_layer(spectrogram)
     
-    assert output.shape == (batch_size, input_time_dim, 30, sub_band_feature_dim) #30 equals the total number of sub bands (define in paper)
+    assert output.shape == (batch_size, input_time_dim, 28, sub_band_feature_dim) #30 equals the total number of sub bands (define in paper)
     
     print("\n\n##########################\nTest passed. Output shape:", output.shape, "\n##########################")
     

@@ -10,9 +10,9 @@ class BandSplitLayer(tf.keras.layers.Layer):
 
         # For freq. below 1 kHz -> band size = 100 Hz
         self.first_band_in_bins = 1000/self.freq_resolution #By default: 32 bins of bandwidth (0, 1000) Hz
-        self.suband_size_first_band = 100 #hZ
-        self.suband_size_first_band_bins = int(self.suband_size_first_band / self.freq_resolution) #By default: 3.2 -> 3 bins per sub band
-        self.num_sub_bands_first_band = int(self.first_band_in_bins / self.suband_size_first_band_bins) #By default: 10 sub bands
+        self.suband_size_first_band = 125 #hZ -> Different from paper in order to cover all the 32 bins from the original spectrogram (with 100Hz it skips 2 bins from 30 to 32)
+        self.suband_size_first_band_bins = int(self.suband_size_first_band / self.freq_resolution) #By default: 4 (If 100Hz it would be 3.2)
+        self.num_sub_bands_first_band = int(self.first_band_in_bins / self.suband_size_first_band_bins) #By default: 8 sub bands
 
         # For freq. between 1 kHz and 4kHz -> band size = 250 Hz
         self.second_band_in_bins = (4000/self.freq_resolution) - (1000/self.freq_resolution) #By default: 96 bins of bandwidth (1000, 4000) Hz
