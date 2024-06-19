@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='bandsplit_tensorflow',
-    version='0.1.0',
+    version='0.1.1',
     description='A non-official implementation of the BandSplit technique as a TensorFlow layer.',
     author='Nicolas Arrieta Larraza',
     author_email='n.arrieta.larraza@gmail.com',
